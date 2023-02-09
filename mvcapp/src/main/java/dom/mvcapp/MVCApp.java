@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 
 public class MVCApp extends Application
 {
+	View view;
+	Model model;
+	Controller controller;
+	
 
 	public static void main(String[] args) {
 		launch(args);
