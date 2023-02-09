@@ -22,6 +22,9 @@ public class MVCApp extends Application
 		Pane root = new Pane();
 		primaryStage.setScene(new Scene(root, 600, 400));
 		primaryStage.show();
+		model = new Model();
+		view = new View(root, model);
+		controller = new Controller(model, view);
 		
 		
 	}
