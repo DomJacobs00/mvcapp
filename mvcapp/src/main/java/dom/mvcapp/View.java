@@ -1,5 +1,7 @@
 package dom.mvcapp;
 
+import java.util.ArrayList;
+
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
@@ -14,6 +16,8 @@ public class View
 	Model model;
 	Button submitButton;
 	TextField nameTF;
+	TextField ageTF;
+	TextField balanceTF;
 	TextArea customersTA;
 	NumberAxis xAxis = new NumberAxis();
 	NumberAxis yAxis = new NumberAxis();
@@ -31,17 +35,26 @@ public class View
 		nameTF.setLayoutX(10);
 		nameTF.setLayoutY(50);
 		
+		ageTF = new TextField();
+		ageTF.setLayoutX(10);
+		ageTF.setLayoutY(90);
+		
+		balanceTF = new TextField();
+		balanceTF.setLayoutX(10);
+		balanceTF.setLayoutY(130);
+		
+		
 		customersTA = new TextArea();
 		customersTA.setLayoutX(200);
-		customersTA.setLayoutY(10);
-		customersTA.setPrefSize(350, 350);
+		customersTA.setLayoutY(50);
+		customersTA.setPrefSize(350, 300);
 		
-		root.getChildren().addAll(submitButton,nameTF, customersTA);
+		root.getChildren().addAll(submitButton, nameTF, ageTF, balanceTF, customersTA);
 		root.getChildren().add(chart);
 		xAxis.setLabel("Age");
 		yAxis.setLabel("Balance");
 		chart.setTitle("Chart of Customers");
-		chart.setLayoutX(300);
+		chart.setLayoutX(550);
 		chart.setLayoutY(10);
 		
 		

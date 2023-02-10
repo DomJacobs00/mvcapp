@@ -20,7 +20,7 @@ public class MVCApp extends Application
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("MVC App");
 		Pane root = new Pane();
-		primaryStage.setScene(new Scene(root, 600, 400));
+		primaryStage.setScene(new Scene(root, 1100, 400));
 		primaryStage.show();
 		model = new Model();
 		view = new View(root, model);

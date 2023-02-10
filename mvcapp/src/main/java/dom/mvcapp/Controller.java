@@ -19,15 +19,27 @@ public class Controller implements EventHandler
 	{
 		if(event.getSource()==this.view.submitButton)
 		{
-			addCustomer(view.nameTF.getText());
+			int age = 0;
+			int balance = 0;
+			try
+			{
+				 age = Integer.parseInt(view.ageTF.getText());
+				 balance = Integer.parseInt(view.balanceTF.getText());
+			}
+			catch (NumberFormatException ex)
+			{
+				;
+			}
+			addCustomer(view.nameTF.getText(),age ,balance);
 			updateView();
+			view.drawChart(model.customers);
 		}
 		
 	}
 	
-	public void addCustomer(String name)
+	public void addCustomer(String name, int age, int balance)
 	{
-		model.addCustomer(name);
+		model.addCustomer(name, age, balance);
 	
 	}
 	public void updateView()
